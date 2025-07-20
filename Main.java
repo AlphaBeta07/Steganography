@@ -1,5 +1,3 @@
-// package com.Steganography;
-
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
@@ -8,18 +6,24 @@ public class Main extends JFrame {
     private File selectedImage;
 
     public Main() {
-        setTitle("Steganography Encoder/Decoder");
+        setTitle("Steganography");
         setSize(500, 400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        JLabel title = new JLabel("Text-in-Image Steganography", JLabel.CENTER);
+        JLabel title = new JLabel("Text-in-Image (Encoder/Decoder)", JLabel.CENTER);
         title.setFont(new Font("SansSerif", Font.BOLD, 18));
         add(title, BorderLayout.NORTH);
 
-        JPanel centerPanel = new JPanel(new GridLayout(1, 2));
+        JPanel centerPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 50));
+
         JButton encodeButton = new JButton("Encode");
         JButton decodeButton = new JButton("Decode");
+
+        // Set button size to 40x10 pixels
+        Dimension buttonSize = new Dimension(100, 30);
+        encodeButton.setPreferredSize(buttonSize);
+        decodeButton.setPreferredSize(buttonSize);
 
         centerPanel.add(encodeButton);
         centerPanel.add(decodeButton);
